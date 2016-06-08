@@ -2,3 +2,14 @@
   margin-top: 15px;
 
 }
+
+#result {
+  font-size: 24px;
+  font-weight: normal;
+  font-style: oblique;
+  margin: 10px
+}
+
+/*#result {
+  display: none;
+}*/
