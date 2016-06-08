@@ -3,7 +3,7 @@ $(document).ready(function() {
       event.preventDefault();
       var userInput = $("#input").val();
       var translatedInput = pigLatin(userInput);
-      $("#result").text(translatedInput);
+      $("#result").append("<h3>" + translatedInput + "</h3>");
     });
 });
 
@@ -13,42 +13,15 @@ var pigLatin = function(phraseToTranslate){
     for (var j = 0; j < phraseToTranslate.length ; i++ ) {
       if ( phraseToTranslate.charAt(0) === vowels.charAt(i) ) {
         var newPhrase = phraseToTranslate + "ay";
-        console.log(newPhrase);
         break;
       } else if ( phraseToTranslate.charAt(1) === vowels.charAt(i) ) {
         var newPhrase = phraseToTranslate.slice(1) + phraseToTranslate.charAt(0) + "ay" ;
-        console.log(newPhrase);
         break;
-      }
-      break;
+      } else if ( phraseToTranslate.charAt(2) === vowels.charAt(i) ) {
+        var newPhrase = phraseToTranslate.slice(2) + phraseToTranslate.charAt(0) + phraseToTranslate.charAt(1) +"ay" ;
+        break;
     }
   }
   return newPhrase;
 }
-// var pigLatin = [ ];
-
-// var makePigLatin = function(userInput){
-
-
-// var translatedPhrase = pigLatin(userInput);
-
-// }
-
-
-      // return i;
-      // debugger;
-      // } else {
-      // return false;
-      // }
-
-// var pigLatin = function(input){
-//   for (var i = 0; i < words.length; i++) {
-//     if (words[0] === "a" || "e" || "i" || "o" || "u" ) {
-//     result = words.concat("ay");
-//     console.log(result);
-//     break;
-//     }
-//     else {
-//       alert("false");
-//     }
-//   }
+}
